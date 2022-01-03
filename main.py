@@ -142,14 +142,22 @@ def show_all_users():
     """
     Show all users
 
-    Show all users registed
+    Show all users registed in the app
 
-    Parameters
+    Parameters:
+        -
 
-    Return
+    Returns a json list with all users in the app, with the following keys:
+        - user_id: UUID
+        - email: Emailstr
+        - first_name: str
+        - last_name: str
+        - birth_date: datatime
     """
 
-    pass
+    with open("users.json", "r", encoding="utf-8") as f:
+        results = json.loads(f.read())
+        return results
 
 ### show a specific user
 @app.get(
