@@ -87,6 +87,17 @@ def home():
     tags=["Users"]
     )
 def signup():
+
+    """
+    Sign up
+
+    Sign up a new user
+
+    Parameters
+
+    Return
+    """
+
     pass
 
 @app.post(
@@ -97,6 +108,17 @@ def signup():
     tags=["Users"]
     )
 def login():
+
+    """
+    Login
+
+    Login a user registed
+
+    Parameters
+
+    Return
+    """
+
     pass
 
 @app.get(
@@ -107,6 +129,17 @@ def login():
     tags=["Users"]
     )
 def show_all_users():
+
+    """
+    Show all users
+
+    Show all users registed
+
+    Parameters
+
+    Return
+    """
+
     pass
 
 @app.get(
@@ -117,6 +150,17 @@ def show_all_users():
     tags=["Users"]
     )
 def show_a_user():
+
+    """
+    Show a user
+
+    Show a specific user resgisted
+
+    Parameters
+
+    Return
+    """
+
     pass
 
 @app.delete(
@@ -127,6 +171,17 @@ def show_a_user():
     tags=["Users"]
     )
 def delete_a_user():
+
+    """
+    Delete a user
+
+    Delete a specific user registed
+
+    Parameters
+
+    Return
+    """
+
     pass
 
 @app.put(
@@ -137,6 +192,17 @@ def delete_a_user():
     tags=["Users"]
     )
 def update_a_user():
+
+    """
+    Update a user
+
+    Upadate a specific user registed
+
+    Parameters
+
+    Return
+    """
+
     pass
 
 ## Tweets
