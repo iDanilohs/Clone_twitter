@@ -62,23 +62,9 @@ class Tweet(BaseModel):
 
 # Path Operations
 
-@app.get(path="/")
-def home():
-
-    """
-    Home
-
-    This function say the welcome to the users and is the first thing to see.
-
-    parameters:This function don't have parameters
-
-    return the string Twitter API working in the screen
-    """
-
-    return {"Twitter API": "Working"}
-
 ## Users
 
+### Register a user
 @app.post(
     path="/signup",
     response_model=User,
@@ -100,6 +86,7 @@ def signup():
 
     pass
 
+### Login a user
 @app.post(
     path="/login",
     response_model=User,
@@ -121,6 +108,7 @@ def login():
 
     pass
 
+### Show all users
 @app.get(
     path="/users",
     response_model=List[User],
@@ -142,6 +130,7 @@ def show_all_users():
 
     pass
 
+### show a specific user
 @app.get(
     path="/users/{user_id}",
     response_model=User,
@@ -163,6 +152,7 @@ def show_a_user():
 
     pass
 
+### Delete a specific user
 @app.delete(
     path="/users/{user_id}/delete",
     response_model=User,
@@ -184,6 +174,7 @@ def delete_a_user():
 
     pass
 
+### Update a specific user
 @app.put(
     path="/users/{user_id}/update",
     response_model=User,
@@ -206,3 +197,114 @@ def update_a_user():
     pass
 
 ## Tweets
+
+### Show all tweets
+@app.get(
+    path="/",
+    response_model=List[Tweet],
+    status_code=status.HTTP_200_OK,
+    summary="Show all tweets",
+    tags=["Tweets"]
+    )
+def home():
+
+    """
+    Home
+
+    This function say the welcome to the users and is the first thing to see.
+
+    parameters:This function don't have parameters
+
+    return the string Twitter API working in the screen and all tweets
+    """
+
+    return {"Twitter API": "Working"}
+
+### Post a tweet
+@app.post(
+    path="/post",
+    response_model=Tweet,
+    status_code=status.HTTP_201_CREATED,
+    summary="Post a tweet",
+    tags=["Tweets"]
+    )
+def post():
+
+    """
+    Post a tweet
+
+    Post a tweet from a user
+
+    Parameters
+
+    Return
+    """
+
+    pass
+
+### Show a tweet
+@app.get(
+    path="/tweets/{tweet_id}",
+    response_model=Tweet,
+    status_code=status.HTTP_200_OK,
+    summary="Show a tweet",
+    tags=["Tweets"]
+    )
+def show_a_tweet():
+
+    """
+    Show a tweet
+
+    Show you a specific tweet
+
+    Parameters
+
+    Return
+    """
+
+    pass
+
+### Delete a tweet
+@app.delete(
+    path="/tweets/{tweet_id}/delete",
+    response_model=Tweet,
+    status_code=status.HTTP_200_OK,
+    summary="Delete a tweet",
+    tags=["Tweets"]
+    )
+def delete_a_tweet():
+
+    """
+    Show a tweet
+
+    Delete a specific tweet
+
+    Parameters
+
+    Return
+    """
+
+    pass
+
+### Update a tweet
+@app.put(
+    path="/tweets/{tweet_id}/update",
+    response_model=Tweet,
+    status_code=status.HTTP_200_OK,
+    summary="Update a tweet",
+    tags=["Tweets"]
+    )
+def update_a_tweet():
+
+    """
+    Update a tweet
+
+    Update a specific tweet
+
+    Parameters
+
+    Return
+    """
+
+    pass
+
