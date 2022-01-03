@@ -60,6 +60,13 @@ class Tweet(BaseModel):
     )
     by: User = Field(...)
 
+class UserRegister(User):
+    password: str = Field(
+        ..., 
+        min_length=8,
+        max_length=50
+        )
+
 # Path Operations
 
 ## Users
@@ -77,14 +84,20 @@ def signup():
     """
     Sign up
 
-    Sign up a new user
+    Sign up a new user in the app
 
-    Parameters
+    Parameters:
+        - Request body parameter
+            - user: UserRegister
 
-    Return
+    Returns a json with the basic user information
+        - user_id: UUID
+        - email: Emailstr
+        - first_name: str
+        - last_name: str
     """
 
-    pass
+    
 
 ### Login a user
 @app.post(
